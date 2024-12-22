@@ -3,7 +3,7 @@
     "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-20.04",
     "name":"streaming-prj",
     "runArgs": [
-        "--device=/dev/snd",
+        // "--device=/dev/snd",
         // "--device=/dev/neuron0:/dev/neuron0"  // Map your neuron device into the container
         "--gpus=all",
         "--network", "host"
@@ -24,7 +24,8 @@
     },
     "containerEnv": {
         "PYTHONDONTWRITEBYTECODE": "1",
-        "PYTHONUNBUFFERED": "1"
+        "PYTHONUNBUFFERED": "1",
+        "PULSE_SERVER": "unix:/mnt/wslg/PulseServer"
     },
     // Configure tool-specific properties.
     "customizations": {
@@ -63,7 +64,13 @@
                 "tamasfe.even-better-toml",
                 "Iterative.dvc",
                 "ms-toolsai.jupyter",
-                "GrapeCity.gc-excelviewer"
+                "GrapeCity.gc-excelviewer",
+                "amazonwebservices.aws-toolkit-vscode",
+                "ms-azuretools.vscode-docker",
+                "GitHub.copilot-chat",
+                "atlassian.atlascode",
+                "ms-toolsai.vscode-jupyter-cell-tags",
+                "ms-toolsai.jupyter-renderers"
             ]
         }
     },
@@ -81,7 +88,12 @@
     "mounts": [
         "source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind",
         "source=${env:HOME}${env:USERPROFILE}/.cache,target=/home/vscode/.cache,type=bind",
-        "source=/mnt/,target=/mnt/,type=bind"
-        // "source=c:/model/,target=/home/vscode/model/,type=bind"
+        "source=/mnt/,target=/mnt/,type=bind",
+        {
+            "source": "/mnt/wslg/PulseServer",
+            "target": "/mnt/wslg/PulseServer",
+            "type": "bind"
+        }
     ]
+
 }

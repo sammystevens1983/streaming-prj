@@ -48,22 +48,21 @@ python -m pip install -U pip
 # export PATH=$HOME/.local/bin:$PATH
 
 # Export paths to bashrc so they persist across shell sessions
-echo 'export PATH=/opt/aws/neuron/bin:$PATH' >> ~/.bashrc
-echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+# echo 'export PATH=/opt/aws/neuron/bin:$PATH' >> ~/.bashrc
+# echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 
+echo "<<<<<< Basic python packages >>>>>>"
 pip install --upgrade pip setuptools wheel
+echo 'export PATH="$HOME/.local/bin:$PATH"'
 
 
 # manual install
-pip install python-dotenv
-pip install pip-tools
-pip install ipykernel 
-# python3.8 -m ipykernel install --user --name .aws_neuron_venv_pytorch --display-name "Python (torch-neuronx)"
-pip install jupyter notebook
-pip install environment_kernels
+echo "<<<<<<<<< Installing Python packages >>>>>>>>>"
+pip install python-dotenv pip-tools ipykernel jupyter notebook environment_kernels
 
+echo "<<<<<<<<<<< Installing sound dependencies >>>>>>>>>>"
+# sudo apt-get install portaudio19-dev
+sudo apt-get -y install ffmpeg
 
-sudo apt-get install portaudio19-dev
-
-
+echo "<<<<<<<<<<<<< Reseting bashrc >>>>>>>>>>>"
 source ~/.bashrc
