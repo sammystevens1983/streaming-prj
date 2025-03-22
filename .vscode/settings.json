@@ -1,5 +1,6 @@
 {
     "peacock.remoteColor": "#65a4ce",
+    "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#8cbbda",
         "activityBar.background": "#8cbbda",

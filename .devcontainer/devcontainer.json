@@ -5,7 +5,7 @@
     "runArgs": [
         // "--device=/dev/snd",
         // "--device=/dev/neuron0:/dev/neuron0"  // Map your neuron device into the container
-        "--gpus=all",
+        // "--gpus=all",
         "--network", "host"
     ],
     // "forwardPorts": [
@@ -18,7 +18,7 @@
         // "ghcr.io/devcontainers/features/docker-from-docker:1": {},
         "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
         // "ghcr.io/devcontainers-contrib/features/pulumi:1": {},
-        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        // "ghcr.io/devcontainers/features/aws-cli:1": {},
         // "ghcr.io/devcontainers/features/node:1": "none" 
 
     },
@@ -86,7 +86,7 @@
     "remoteUser": "vscode",
     // The mount targets below are based upon the value of remoteUser
     "mounts": [
-        "source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind",
+        // "source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind",
         "source=${env:HOME}${env:USERPROFILE}/.cache,target=/home/vscode/.cache,type=bind",
         "source=/mnt/,target=/mnt/,type=bind",
         {

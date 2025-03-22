@@ -6,7 +6,7 @@ import io
 pygame.mixer.init()
 
 # Load MP3 file using pydub
-mp3_file = "jenny.mp3"  # Replace with your file path
+mp3_file = "audio/jenny.mp3"  # Replace with your file path
 
 # Use pydub to read the MP3 file
 audio = AudioSegment.from_mp3(mp3_file)

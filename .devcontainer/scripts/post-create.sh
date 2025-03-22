@@ -66,3 +66,5 @@ sudo apt-get -y install ffmpeg
 
 echo "<<<<<<<<<<<<< Reseting bashrc >>>>>>>>>>>"
 source ~/.bashrc
+
+# pip install -r requirements.txt
